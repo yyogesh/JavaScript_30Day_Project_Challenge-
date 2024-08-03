@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>New Tax Regime Calculator</h1>
+        <form id="tax-form">
+            <div class="input-group">
+                <label for="income">Annual Income (₹)</label>
+                <input type="number" id="income" required min="0" step="1000">
+            </div>
+            <div class="input-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" required>
+            </div>
+            <div class="input-group">
+                <label for="age">Age (as of current financial year end)</label>
+                <input type="number" id="age" readonly>
+            </div>
+            <div class="input-group">
+                <label for="standard-deduction">Standard Deduction (₹)</label>
+                <input type="number" id="standard-deduction" value="75000" min="0" step="1000">
+            </div>
+            <div class="input-group">
+                <label for="other-deductions">Other Deductions (₹)</label>
+                <input type="number" id="other-deductions" value="0" min="0" step="1000">
+            </div>
+            <button type="submit">Calculate Tax</button>
+        </form>
+        <div id="result" class="hidden">
+            <h2>Tax Calculation Results</h2>
+            <div class="result-item">
+                <span>Taxable Income:</span>
+                <span id="taxable-income"></span>
+            </div>
+            <div class="result-item">
+                <span><strong>Total Tax:</strong></span>
+                <span id="total-tax"></span>
+            </div>
+            <div class="result-item">
+                <span>Effective Tax Rate:</span>
+                <span id="effective-tax-rate"></span>
+            </div>
+            <h3>Tax Breakdown</h3>
+            <div id="tax-breakdown"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
