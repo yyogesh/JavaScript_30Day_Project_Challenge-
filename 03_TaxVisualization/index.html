@@ -9,47 +9,81 @@
 <body>
     <div class="container">
         <h1>New Tax Regime Calculator</h1>
-        <form id="tax-form">
-            <div class="input-group">
-                <label for="income">Annual Income (₹)</label>
-                <input type="number" id="income" required min="0" step="1000">
+        <div class="row">
+            <form id="tax-form">
+                <div class="row">
+                    <div class="input-group">
+                        <label for="income">Annual Income (₹)</label>
+                        <input type="number" id="income" required min="0" step="1000">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="age">Age (as of current financial year end)</label>
+                        <input type="number" id="age" readonly>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group">
+                        <label for="standard-deduction">Standard Deduction (₹)</label>
+                        <input type="number" id="standard-deduction" value="75000" min="0" step="1000">
+                    </div>
+                    <div class="input-group">
+                        <label for="other-deductions">Other Deductions (₹)</label>
+                        <input type="number" id="other-deductions" value="0" min="0" step="1000">
+                    </div>
+                </div>
+                <div class="row button-container">
+                    <button type="submit">Calculate Tax</button>
+                    <button type="button" id="resetBtn">Reset</button>
+                </div>
+            </form>
+            <div id="result" class="tax-result">
+                <h2>Tax Calculation Results</h2>
+                <div class="result-item">
+                    <span>Taxable Income:</span>
+                    <span id="taxable-income"></span>
+                </div>
+                <div class="result-item">
+                    <span><strong>Total Tax:</strong></span>
+                    <span id="total-tax"></span>
+                </div>
+                <div class="result-item">
+                    <span>Effective Tax Rate:</span>
+                    <span id="effective-tax-rate"></span>
+                </div>
+                <h3>Tax Breakdown</h3>
+                <div id="tax-breakdown"></div>
             </div>
-            <div class="input-group">
-                <label for="dob">Date of Birth</label>
-                <input type="date" id="dob" required>
-            </div>
-            <div class="input-group">
-                <label for="age">Age (as of current financial year end)</label>
-                <input type="number" id="age" readonly>
-            </div>
-            <div class="input-group">
-                <label for="standard-deduction">Standard Deduction (₹)</label>
-                <input type="number" id="standard-deduction" value="75000" min="0" step="1000">
-            </div>
-            <div class="input-group">
-                <label for="other-deductions">Other Deductions (₹)</label>
-                <input type="number" id="other-deductions" value="0" min="0" step="1000">
-            </div>
-            <button type="submit">Calculate Tax</button>
-        </form>
-        <div id="result" class="hidden">
-            <h2>Tax Calculation Results</h2>
-            <div class="result-item">
-                <span>Taxable Income:</span>
-                <span id="taxable-income"></span>
-            </div>
-            <div class="result-item">
-                <span><strong>Total Tax:</strong></span>
-                <span id="total-tax"></span>
-            </div>
-            <div class="result-item">
-                <span>Effective Tax Rate:</span>
-                <span id="effective-tax-rate"></span>
-            </div>
-            <h3>Tax Breakdown</h3>
-            <div id="tax-breakdown"></div>
         </div>
+        <div class="chart-container tax-result">
+            <h2>Tax and Deduction Visualizations</h2>
+            <div class="charts">
+                <div class="row">
+                    <div class="chart">
+                        <canvas id="pieChart"></canvas>
+                    </div>
+                    <div class="chart">
+                        <canvas id="barChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chart-container tax-result">
+            <h2>Tax slab Visualizations</h2>
+            <div class="chart">
+                <canvas id="taxSlabChart"></canvas>
+            </div>
+        </div>
+        <div class="loader" id="loader"></div>
+        <div id="loaderText">Please wait, we are calculating your tax...</div>
     </div>
+    <button id="scrollToTopBtn" title="Go to top">↑</button>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
