@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban board</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Story Board</h1>
+        <div class="kanban-board">
+            <div class="column" id="new">
+                <div class="column-indicator"></div>
+                <h2>New</h2>
+                <button class="add-task" onclick="addTask('new')">+ Add Task</button>
+            </div>
+            <div class="column" id="active">
+                <div class="column-indicator"></div>
+                <h2>Active</h2>
+                <button class="add-task" onclick="addTask('active')">+ Add Task</button>
+            </div>
+            <div class="column" id="resolved">
+                <div class="column-indicator"></div>
+                <h2>Resolved</h2>
+                <button class="add-task" onclick="addTask('resolved')">+ Add Task</button>
+            </div>
+            <div class="column" id="closed">
+                <div class="column-indicator"></div>
+                <h2>Closed</h2>
+                <button class="add-task" onclick="addTask('closed')">+ Add Task</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

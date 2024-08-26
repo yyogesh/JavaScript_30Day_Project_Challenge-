@@ -1,0 +1,107 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+    color: #323130;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 20px;
+    max-width: 1200px;
+    width: 95%;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+
+    text-align: center;
+    color: #333;
+    border-bottom: 3px solid #3498db;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+.kanban-board {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+.column {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 10px;
+    width: calc(25% - 15px);
+    min-width: 250px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.column h2 {
+    text-align: center;
+    color: #0078d4;
+    font-size: 18px;
+    margin-top: 0;
+}
+.task {
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: move;
+    transition: all 0.3s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.task:hover {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+}
+.task.dragging {
+    opacity: 0.5;
+    transform: scale(1.05);
+}
+.task-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.task-id {
+    font-size: 12px;
+    color: #605e5c;
+}
+.task-assigned {
+    font-size: 12px;
+    color: #0078d4;
+    margin-top: 5px;
+}
+.add-task {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.add-task:hover {
+    background-color: #106ebe;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+#new .task { background-color: #ffebee; }
+#active .task { background-color: #e3f2fd; }
+#resolved .task { background-color: #e8f5e9; }
+#closed .task { background-color: #fafafa; }
+.column-indicator {
+    height: 5px;
+    background-color: #0078d4;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    transition: width 0.3s;
+    width: 0;
+}
