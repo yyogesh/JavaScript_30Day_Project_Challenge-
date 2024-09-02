@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-chart-line"></i> Stock Market Simulator</h1>
+        </header>
+        <div id="stockTicker" class="ticker-wrap">
+            <div class="ticker"></div>
+        </div>
+        <div class="main-content">
+            <div class="trading-panel">
+                <h2><i class="fas fa-exchange-alt"></i> Trade Stocks</h2>
+                <select aria-label="stock options" id="stockSelect">
+                    <option value="AAPL">Apple (AAPL)</option>
+                    <option value="GOOGL">Google (GOOGL)</option>
+                    <option value="MSFT">Microsoft (MSFT)</option>
+                    <option value="AMZN">Amazon (AMZN)</option>
+                </select>
+                <input aria-label="number of stock" type="number" id="quantity" min="1" value="1">
+                <button id="buyBtn" class="btn-buy"><i class="fas fa-shopping-cart"></i> Buy</button>
+                <button id="sellBtn" class="btn-sell"><i class="fas fa-dollar-sign"></i> Sell</button>
+            </div>
+            <div class="portfolio">
+                <h2><i class="fas fa-briefcase"></i> Your Portfolio</h2>
+                <ul id="portfolioList"></ul>
+                <p class="total-value">Total Value: $<span id="portfolioValue">0</span></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

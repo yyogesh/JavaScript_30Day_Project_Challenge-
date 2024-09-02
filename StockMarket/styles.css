@@ -1,0 +1,182 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+h1 i, h2 i {
+    margin-right: 10px;
+}
+
+.ticker-wrap {
+    background-color: #34495e;
+    padding: 10px 0;
+    overflow: hidden;
+    border-radius: 0 0 10px 10px;
+}
+
+.ticker {
+    display: inline-block;
+    white-space: nowrap;
+    padding-right: 100%;
+    animation: ticker 30s linear infinite;
+}
+
+@keyframes ticker {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+}
+
+.ticker-item {
+    display: inline-block;
+    padding: 0 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.trading-panel, .portfolio {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-basis: 48%;
+}
+
+select, input, button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.btn-buy {
+    background-color: #009740;
+    color: white;
+}
+
+.btn-buy:hover {
+    background-color: #27ae60;
+}
+
+.btn-sell {
+    background-color: #b71100;
+    color: white;
+}
+
+.btn-sell:hover {
+    background-color: #c0392b;
+}
+
+#portfolioList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#portfolioList li {
+    background-color: #ecf0f1;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+#portfolioList li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-item-details {
+    flex-grow: 1;
+}
+
+.portfolio-item-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.portfolio-item-actions button {
+    padding: 5px 10px;
+    font-size: 14px;
+    margin: 0;
+}
+
+.total-value {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 20px;
+}
+
+.stock-up {
+    color: #009740;
+}
+
+.stock-down {
+    color: #b71100;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .trading-panel, .portfolio {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+input {
+    max-width: 538px;
+}
