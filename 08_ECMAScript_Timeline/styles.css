@@ -1,0 +1,115 @@
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background-color: #1e1e1e;
+    margin: 0;
+    padding: 0;
+    min-height: 150vh;
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+    color: #f0db4f;
+    font-size: 2.5em;
+    text-shadow: 0 0 10px rgba(240, 219, 79, 0.7);
+}
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #f0db4f, #323330);
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(240, 219, 79, 0.7);
+}
+#timeline {
+    position: relative;
+    padding: 20px 0;
+}
+.event {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin-bottom: 50px;
+    position: relative;
+    cursor: pointer;
+}
+.event.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.event::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, #f0db4f, #323330);
+    box-shadow: 0 0 10px rgba(240, 219, 79, 0.7);
+}
+.event-content {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.event-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(240, 219, 79, 0.3);
+}
+.event-date {
+    font-weight: bold;
+    color: #f0db4f;
+    font-size: 1.2em;
+}
+.event-title {
+    margin: 10px 0;
+    color: #f0db4f;
+}
+.event-description {
+    display: none;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #f0db4f;
+}
+#info-panel {
+    position: fixed;
+    top: 20px;
+    right: -300px;
+    width: 280px;
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    transition: right 0.3s ease;
+}
+#info-panel.active {
+    right: 20px;
+}
+#info-panel h2 {
+    color: #f0db4f;
+    margin-top: 0;
+}
+#info-panel img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+#close-panel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #e0e0e0;
+    font-size: 1.5em;
+    cursor: pointer;
+}
