@@ -216,3 +216,8 @@ window.addEventListener('scroll', () => {
     const scrollPosition = window.scrollY;
     title.style.transform = `translateY(${scrollPosition * 0.5}px)`;
 });
+
+// Close info panel
+document.getElementById('close-panel').addEventListener('click', () => {
+    infoPanel.classList.remove('active');
+});
