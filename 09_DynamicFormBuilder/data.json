@@ -1,0 +1,57 @@
+{
+  "fields": [
+    {
+      "id": "name",
+      "label": "Name",
+      "type": "text",
+      "required": true,
+      "validation": {
+        "minLength": 2,
+        "maxLength": 50,
+        "message": "Name must be between 2 and 50 characters"
+      }
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "email",
+      "required": true,
+      "validation": {
+        "pattern": "^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$",
+        "message": "Please enter a valid email address"
+      }
+    },
+    {
+      "id": "age",
+      "label": "Age",
+      "type": "number",
+      "required": false,
+      "validation": {
+        "min": 18,
+        "max": 120,
+        "message": "Age must be between 18 and 120"
+      }
+    },
+    {
+      "id": "country",
+      "label": "Country",
+      "type": "select",
+      "required": true,
+      "options": [
+        {"value": "us", "label": "United States"},
+        {"value": "uk", "label": "United Kingdom"},
+        {"value": "ca", "label": "Canada"}
+      ]
+    },
+    {
+      "id": "comments",
+      "label": "Comments",
+      "type": "textarea",
+      "required": false,
+      "validation": {
+        "maxLength": 500,
+        "message": "Comments must not exceed 500 characters"
+      }
+    }
+  ]
+}
